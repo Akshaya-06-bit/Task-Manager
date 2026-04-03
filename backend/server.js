@@ -15,15 +15,17 @@ connectDB();
 const app = express();
 
 // CORS - allow local + deployed frontend
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://task-manager-773liinjq-akshaya-06-bits-projects.vercel.app",
-    ],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://task-manager-773liinjq-akshaya-06-bits-projects.vercel.app",
+//     ],
+//     credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 // Parse JSON
 app.use(express.json());
