@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://task-manager-mr8nmjtqg-akshaya-06-bits-projects.vercel.app",
+      "https://task-manager-773liinjq-akshaya-06-bits-projects.vercel.app",
     ],
     credentials: true,
   })
@@ -38,10 +38,10 @@ app.get("/api", (req, res) => {
   res.json({ message: "API is running..." });
 });
 
-// Auth routes (public)
+// Auth routes
 app.use("/api/auth", authRoutes);
 
-// Task routes (protected)
+// Protected task routes
 app.use("/api/tasks", protect, taskRoutes);
 
 const PORT = process.env.PORT || 5000;
