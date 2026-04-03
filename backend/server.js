@@ -6,7 +6,7 @@ const taskRoutes = require("./routes/taskRoutes");
 const authRoutes = require("./routes/authRoutes");
 const { protect } = require("./middleware/authMiddleware");
 
-// Load environment variables from .env
+// Load environment variables
 dotenv.config();
 
 // Connect to MongoDB
@@ -14,7 +14,7 @@ connectDB();
 
 const app = express();
 
-// Allow requests from the frontend
+// CORS - allow local + deployed frontend
 app.use(
   cors({
     origin: [
@@ -25,18 +25,23 @@ app.use(
   })
 );
 
-// Parse incoming JSON bodies
+// Parse JSON
 app.use(express.json());
 
-// Health check
+// Root route
 app.get("/", (req, res) => {
   res.send("Task Manager API Running...");
 });
 
-// Public auth routes — login and register do NOT need a token
+// API health route
+app.get("/api", (req, res) => {
+  res.json({ message: "API is running..." });
+});
+
+// Auth routes (public)
 app.use("/api/auth", authRoutes);
 
-// Protected task routes — every request must carry a valid JWT token
+// Task routes (protected)
 app.use("/api/tasks", protect, taskRoutes);
 
 const PORT = process.env.PORT || 5000;
