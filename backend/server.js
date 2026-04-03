@@ -15,7 +15,12 @@ connectDB();
 const app = express();
 
 // Allow requests from the frontend
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // Parse incoming JSON bodies
 app.use(express.json());
@@ -33,5 +38,5 @@ app.use("/api/tasks", protect, taskRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on ${PORT}`);
 });
