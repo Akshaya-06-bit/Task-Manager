@@ -40,6 +40,10 @@ app.get("/api", (req, res) => {
   res.json({ message: "API is running..." });
 });
 
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend test route working" });
+});
+
 // Auth routes
 app.use("/api/auth", authRoutes);
 
