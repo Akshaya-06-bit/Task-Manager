@@ -1,7 +1,10 @@
 import axios from "axios";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "https://task-manager-7ldh.onrender.com/api";
+
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/tasks`,
+  baseURL: `${API_URL}/tasks`,
 });
 
 api.interceptors.request.use((config) => {
