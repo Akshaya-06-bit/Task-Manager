@@ -17,7 +17,10 @@ const app = express();
 // Allow requests from the frontend
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://task-manager-mr8nmjtqg-akshaya-06-bits-projects.vercel.app",
+    ],
     credentials: true,
   })
 );
