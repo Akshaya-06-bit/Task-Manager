@@ -66,7 +66,7 @@ This project helped me strengthen my understanding of:
 - **Vite**
 - **CSS**
 - **Axios**
-- **React Router DOM** *(if used)*
+
 
 ### Backend
 - **Node.js**
