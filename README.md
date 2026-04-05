@@ -75,8 +75,8 @@ This project helped me strengthen my understanding of:
 - **Mongoose**
 
 ### Authentication
-- **JWT (JSON Web Token)** *(if used)*
-- **bcrypt / bcryptjs** *(if used for password hashing)*
+- **JWT (JSON Web Token)** 
+- **bcrypt / bcryptjs** 
 
 ---
 
