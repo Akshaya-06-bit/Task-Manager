@@ -7,10 +7,8 @@ A modern and responsive **full-stack Task Manager web application** built with *
 ---
 
 ## 🚀 Live Demo
-> Add your deployed links here after deployment
 
-- **Frontend:** [Coming Soon](#)
-- **Backend API:** [Coming Soon](#)
+https://task-manager-lrlmgqalt-akshaya-06-bits-projects.vercel.app/
 
 ---
 
